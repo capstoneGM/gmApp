@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 
 import java.net.URI;
 
@@ -18,29 +19,63 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        MaterialButton logoutbtn = (MaterialButton) findViewById(R.id.logoutbtn);
-        MaterialButton charingstationsbtn = (MaterialButton) findViewById(R.id.charingstationsbtn);
-        MaterialButton balancebtn = (MaterialButton) findViewById(R.id.balancebtn);
+        MaterialCardView profile = (MaterialCardView) findViewById(R.id.profile_card);
+        MaterialCardView location = (MaterialCardView) findViewById(R.id.charger_card);
+        MaterialCardView bank = (MaterialCardView) findViewById(R.id.bank_card);
+        MaterialCardView logOut = (MaterialCardView) findViewById(R.id.logout_card);
 
-        logoutbtn.setOnClickListener(new View.OnClickListener() {
+        profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openMainActivity();
+
             }
         });
-        charingstationsbtn.setOnClickListener(new View.OnClickListener() {
+
+        location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // openGmMap();
                 openGmMap("https://www.google.com/maps/search/electric+vehicles+charging+stations/@36.2031967,-94.1819611,12z/data=!3m1!4b1");
             }
         });
-        balancebtn.setOnClickListener(new View.OnClickListener() {
+
+        bank.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openAccountBalance();
             }
         });
+
+        logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logout();
+            }
+        });
+
+
+//        MaterialButton logoutbtn = (MaterialButton) findViewById(R.id.logoutbtn);
+//        MaterialButton charingstationsbtn = (MaterialButton) findViewById(R.id.charingstationsbtn);
+//        MaterialButton balancebtn = (MaterialButton) findViewById(R.id.balancebtn);
+//
+//        logoutbtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                openMainActivity();
+//            }
+//        });
+//        charingstationsbtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//               // openGmMap();
+//                openGmMap("https://www.google.com/maps/search/electric+vehicles+charging+stations/@36.2031967,-94.1819611,12z/data=!3m1!4b1");
+//            }
+//        });
+//        balancebtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                openAccountBalance();
+//            }
+//        });
     }
 
     private void openAccountBalance() {
@@ -53,9 +88,11 @@ public class MainMenu extends AppCompatActivity {
         startActivity(new Intent(Intent.ACTION_VIEW,uri));
     }
 
-    public void openMainActivity(){
-        Intent intentMain = new Intent(this,MainActivity.class);
-        startActivity(intentMain);
+    private void logout(){
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 
 
