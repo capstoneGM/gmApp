@@ -28,11 +28,34 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/connect_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:clickable="true"
+        app:cardElevation="@dimen/_1sdp"
+        app:cardBackgroundColor="@color/teal_200"
+        app:cardCornerRadius="@dimen/_16sdp"
+        app:layout_constraintBottom_toBottomOf="@id/viewHeaderBackground"
+        app:layout_constraintTop_toBottomOf="@id/viewHeaderBackground">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/_10sdp"
+            android:textSize="@dimen/_15sdp"
+            android:text="Connect to Car" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/vehicle_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_16sdp"
         android:layout_marginEnd="@dimen/_16sdp"
+        android:visibility="invisible"
         app:cardElevation="@dimen/_1sdp"
         app:cardBackgroundColor="@color/teal_200"
         app:cardCornerRadius="@dimen/_16sdp"
@@ -114,65 +137,65 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/profile_card"
-        android:clickable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_12sdp"
         android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_4sdp"
-        app:cardElevation="@dimen/_1sdp"
+        android:clickable="true"
         app:cardBackgroundColor="@color/teal_200"
         app:cardCornerRadius="@dimen/_16sdp"
-        app:layout_constraintTop_toBottomOf="@id/vehicle_card"
+        app:cardElevation="@dimen/_1sdp"
         app:layout_constraintEnd_toStartOf="@id/charger_card"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vehicle_card">
 
         <ImageView
             android:layout_width="@dimen/_90sdp"
             android:layout_height="@dimen/_90sdp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_baseline_person_24"
-            android:layout_margin="@dimen/_20sdp" />
+            android:layout_margin="@dimen/_20sdp"
+            android:src="@drawable/ic_baseline_person_24" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profile"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginBottom="@dimen/_10sdp"/>
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:text="Profile" />
 
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/charger_card"
-        android:clickable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_12sdp"
         android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_16sdp"
-        app:cardElevation="@dimen/_1sdp"
+        android:clickable="true"
         app:cardBackgroundColor="@color/teal_200"
         app:cardCornerRadius="@dimen/_16sdp"
-        app:layout_constraintTop_toBottomOf="@id/vehicle_card"
+        app:cardElevation="@dimen/_1sdp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/profile_card"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/vehicle_card">
 
         <ImageView
             android:layout_width="@dimen/_90sdp"
             android:layout_height="@dimen/_90sdp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_baseline_location_on_24"
-            android:layout_margin="@dimen/_20sdp" />
+            android:layout_margin="@dimen/_20sdp"
+            android:src="@drawable/ic_baseline_location_on_24" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Locate Charger"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginBottom="@dimen/_10sdp"/>
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:text="Locate Charger" />
 
     </com.google.android.material.card.MaterialCardView>
 
