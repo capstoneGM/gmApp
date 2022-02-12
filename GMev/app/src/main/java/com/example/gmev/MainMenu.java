@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.google.android.material.button.MaterialButton;
@@ -32,7 +33,8 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                // openGmMap();
-                openGmMap("https://www.google.com/maps/search/electric+vehicles+charging+stations/@36.2031967,-94.1819611,12z/data=!3m1!4b1");
+             // openGmMap("https://www.google.com/maps/search/electric+vehicles+charging+stations/@36.2031967,-94.1819611,12z/data=!3m1!4b1");
+                openGmMap("");
             }
         });
         balancebtn.setOnClickListener(new View.OnClickListener() {
@@ -49,8 +51,14 @@ public class MainMenu extends AppCompatActivity {
     }
 
     private void openGmMap(String s) {
-        Uri uri = Uri.parse(s);
-        startActivity(new Intent(Intent.ACTION_VIEW,uri));
+//        Uri uri = Uri.parse(s);
+//        startActivity(new Intent(Intent.ACTION_VIEW,uri));
+        Log.d("ExploreActivity", "Going to open up map!");
+        Intent switchActivityIntent = new Intent(this, MapsActivity.class);
+        startActivity(switchActivityIntent);
+        Intent mapsIntent = new Intent();
+        mapsIntent.setClass(this, MapsActivity.class);
+        startActivity(mapsIntent);
     }
 
     public void openMainActivity(){
