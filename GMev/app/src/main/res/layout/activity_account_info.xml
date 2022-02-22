@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".AccountInfo">
+
+    <TextView
+        android:id="@+id/accountInformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/account_information"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/exitbtn"
+        android:layout_width="396dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vin"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="151dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@android:color/holo_blue_bright"
+        android:text="@string/account_info_back"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/fullname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/accountInformation"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:drawablePadding="20dp"
+        android:hint="First and last name"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fullname"
+        android:hint="Email"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
+        android:drawablePadding="20dp"
+        />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/email"
+        android:hint="phone number"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/ic_baseline_phone_24"
+        android:drawablePadding="20dp"
+        />
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phone"
+        android:hint="Address"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        />
+
+    <EditText
+        android:id="@+id/vehiclemodel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/address"
+        android:hint="Vehicle Model"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        />
+
+    <EditText
+        android:id="@+id/year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vehiclemodel"
+        android:hint="Year"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        />
+    <EditText
+        android:id="@+id/vin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/year"
+        android:hint="Vehicle Identification Number"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        />
+
+</RelativeLayout>

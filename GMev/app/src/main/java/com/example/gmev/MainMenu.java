@@ -11,6 +11,8 @@ import com.google.android.material.button.MaterialButton;
 
 import java.net.URI;
 
+import enums.Screens;
+
 public class MainMenu extends AppCompatActivity {
 
     @Override
@@ -21,6 +23,7 @@ public class MainMenu extends AppCompatActivity {
         MaterialButton logoutbtn = (MaterialButton) findViewById(R.id.logoutbtn);
         MaterialButton charingstationsbtn = (MaterialButton) findViewById(R.id.charingstationsbtn);
         MaterialButton balancebtn = (MaterialButton) findViewById(R.id.balancebtn);
+        MaterialButton accountInfoBtn = (MaterialButton) findViewById((R.id.editprofile));
 
         logoutbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +44,11 @@ public class MainMenu extends AppCompatActivity {
                 openAccountBalance();
             }
         });
+
+        accountInfoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { openAccountInfo();}
+        });
     }
 
     private void openAccountBalance() {
@@ -58,6 +66,10 @@ public class MainMenu extends AppCompatActivity {
         startActivity(intentMain);
     }
 
-
+    public void openAccountInfo() {
+        Intent intentAccountInfo = new Intent(this, AccountInfo.class);
+        intentAccountInfo.putExtra("from_screen", Screens.MAIN_MENU);
+        startActivity(intentAccountInfo);
+    }
 
 }

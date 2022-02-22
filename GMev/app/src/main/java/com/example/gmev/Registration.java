@@ -8,9 +8,17 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
+
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
+
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -18,11 +26,21 @@ import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import enums.Screens;
+
 public class Registration extends AppCompatActivity {
+
+
     private FirebaseAuth mAuth;
     EditText mFullName, mEmail, mPhoneNumber, mAddress,mVehicleModel, mYear, mVIN, mPassword1, mPassword2;
     MaterialButton mSubmit;
     ProgressBar mProgressbar;
+
+
+    private dto.Registration registrationInfo = new dto.Registration();
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +66,8 @@ public class Registration extends AppCompatActivity {
         mSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword1.getText().toString().trim();
                 String passwordcopy= mPassword2.getText().toString().trim();
@@ -84,8 +104,28 @@ public class Registration extends AppCompatActivity {
                     }
                 });
 
+                openAccountInfo();
             }
         });
     }
 
+    @Override
+    protected  void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        dto.Registration returnData = (dto.Registration) data.getSerializableExtra("registration_info");
+        if (returnData != null) {
+            registrationInfo = returnData;
+        }
+    }
+
+    public void openAccountInfo(){
+        Intent intentAccountInfo = new Intent(this,AccountInfo.class);
+
+        registrationInfo.username = ((EditText)findViewById(R.id.username)).getText().toString();
+        registrationInfo.password = ((EditText)findViewById(R.id.password1)).getText().toString();
+
+        intentAccountInfo.putExtra("registration_info", registrationInfo);
+        startActivityForResult(intentAccountInfo, 200);
+    }
 }
