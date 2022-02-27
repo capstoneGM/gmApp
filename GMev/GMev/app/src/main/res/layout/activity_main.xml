@@ -66,22 +66,17 @@
 
     <TextView
         android:id="@+id/forgotpassword"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="14dp"
         android:layout_marginEnd="40dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#00000000"
-        android:layout_alignParentRight="true"
         android:gravity="right"
         android:text="Forgot password?"
-        android:textColor="@color/white"
-        android:onClick="callForgetPassword"
-        android:clickable="true"
-        />
-
+        android:textColor="@color/white" />
     <TextView
         android:id="@+id/YouDontHaveAnAcount"
         android:layout_width="wrap_content"

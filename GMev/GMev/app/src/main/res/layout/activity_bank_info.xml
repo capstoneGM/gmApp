@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".BankInfo">
+
+    <TextView
+        android:id="@+id/bankinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:text="Bank Account Information"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/accounttype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bankinfo"
+        android:hint="Account type"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:drawablePadding="20dp"
+        />
+    <EditText
+        android:id="@+id/routingnumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/accounttype"
+        android:hint="Routing number"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
+        android:drawablePadding="20dp"
+        />
+    <EditText
+        android:id="@+id/accountnumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/routingnumber"
+        android:hint="Account number"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/ic_baseline_phone_24"
+        android:drawablePadding="20dp"
+        />
+
+    <EditText
+        android:id="@+id/confirmaccountnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/accountnumber"
+        android:hint="Confirm account number"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        />
+
+    <EditText
+        android:id="@+id/accountnickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/confirmaccountnum"
+        android:hint="Account nickname"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/savebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/accountnickname"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@android:color/holo_blue_bright"
+        android:text="Save"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/skipbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/savebtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@android:color/holo_blue_bright"
+        android:text="Skip"
+        />
+
+
+
+</RelativeLayout>
