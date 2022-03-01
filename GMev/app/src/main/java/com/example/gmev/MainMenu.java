@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.net.URI;
 
@@ -15,10 +16,14 @@ import enums.Screens;
 
 public class MainMenu extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+        mAuth = FirebaseAuth.getInstance();
 
         MaterialButton logoutbtn = (MaterialButton) findViewById(R.id.logoutbtn);
         MaterialButton charingstationsbtn = (MaterialButton) findViewById(R.id.charingstationsbtn);
@@ -28,9 +33,11 @@ public class MainMenu extends AppCompatActivity {
         logoutbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mAuth.signOut();
                 openMainActivity();
             }
         });
+
         charingstationsbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

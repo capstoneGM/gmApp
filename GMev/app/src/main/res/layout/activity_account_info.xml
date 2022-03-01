@@ -28,15 +28,30 @@
         android:id="@+id/exitbtn"
         android:layout_width="396dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/vin"
+        android:layout_below="@+id/account_info_submit"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="151dp"
+        android:layout_marginTop="-25dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="30dp"
         android:backgroundTint="@android:color/holo_blue_bright"
         android:text="@string/account_info_back"
+        android:textColor="@color/black" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/account_info_submit"
+        android:layout_width="396dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vin"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@android:color/holo_blue_bright"
+        android:text="@string/account_info_submit"
         android:textColor="@color/black" />
 
     <EditText

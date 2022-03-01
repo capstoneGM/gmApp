@@ -22,7 +22,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Registration"
@@ -32,7 +32,7 @@
         android:layout_marginBottom="5dp"
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="20dp"
-        android:hint="Username"
+        android:hint="Email"
         android:padding="10dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
@@ -41,7 +41,7 @@
         android:id="@+id/password1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/username"
+        android:layout_below="@id/email"
         android:hint="Password"
         android:textColor="@color/white"
         android:textColorHint="@color/white"

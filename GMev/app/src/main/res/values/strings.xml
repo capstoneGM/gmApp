@@ -2,6 +2,7 @@
     <string name="app_name">GMev</string>
     <string name="account_information">Account Information</string>
     <string name="account_info_back">BACK</string>
+    <string name="account_info_submit">SUBMIT</string>
     <string name="name">Name</string>
     <string name="email">Email</string>
 </resources>

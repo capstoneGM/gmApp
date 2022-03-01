@@ -3,7 +3,6 @@ package dto;
 import java.io.Serializable;
 
 public class Registration implements Serializable {
-    public String username;
     public String password;
     public String fullName;
     public String email;

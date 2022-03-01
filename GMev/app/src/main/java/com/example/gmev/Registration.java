@@ -46,21 +46,12 @@ public class Registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-
-        mFullName = findViewById(R.id.fullname);
         mEmail = findViewById(R.id.email);
-        mPhoneNumber =findViewById(R.id.phone);
-        mAddress =findViewById(R.id.address);
-        mVehicleModel = findViewById(R.id.vehiclemodel);
-        mYear = findViewById(R.id.year);
-        mVIN = findViewById(R.id.vin);
         mPassword1 = findViewById(R.id.password1);
         mPassword2 = findViewById(R.id.password2);
         mSubmit = findViewById(R.id.submit);
         mAuth = FirebaseAuth.getInstance();
         mProgressbar = findViewById(R.id.progressbar);
-
-
 
 
         mSubmit.setOnClickListener(new View.OnClickListener() {
@@ -89,21 +80,6 @@ public class Registration extends AppCompatActivity {
                   mPassword2.setError("Password must be the same");
                   return;
                 }
-                mProgressbar.setVisibility(view.VISIBLE);
-
-                //registration
-                mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(Registration.this, "Account Created.",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),BankInfo.class));
-                        }else{
-                            //Toast.makeText(Registration.this, "missing fields"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
                 openAccountInfo();
             }
         });
@@ -122,7 +98,7 @@ public class Registration extends AppCompatActivity {
     public void openAccountInfo(){
         Intent intentAccountInfo = new Intent(this,AccountInfo.class);
 
-        registrationInfo.username = ((EditText)findViewById(R.id.username)).getText().toString();
+        registrationInfo.email = ((EditText)findViewById(R.id.email)).getText().toString();
         registrationInfo.password = ((EditText)findViewById(R.id.password1)).getText().toString();
 
         intentAccountInfo.putExtra("registration_info", registrationInfo);
