@@ -12,13 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="@dimen/_45sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_45sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
         android:text="Sign in"
         android:textColor="@color/white"
-        android:textSize="25dp"
+        android:textSize="@dimen/_20ssp"
         android:textStyle="bold" />
 
     <EditText
@@ -26,44 +26,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/signin"
-
-        android:hint="Email address"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginHorizontal="@dimen/_40sdp"
+        android:layout_marginBottom="@dimen/_3sdp"
+        android:background="@drawable/border"
         android:drawableLeft="@drawable/ic_baseline_person_24"
-        android:drawablePadding="20dp"
-        android:padding="10dp" />
+        android:drawablePadding="@dimen/_15ssp"
+        android:hint="Email address"
+        android:padding="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/email"
         android:hint="Password"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:padding="10dp"
+        android:background="@drawable/border"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:layout_marginHorizontal="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:padding="@dimen/_10sdp"
         android:drawableLeft="@drawable/ic_baseline_lock_24"
-        android:drawablePadding="20dp"
-        android:inputType="textPassword"
-        />
+        android:drawablePadding="@dimen/_10sdp"
+        android:inputType="textPassword" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/password"
+        android:layout_below="@id/forgotpassword"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
         android:backgroundTint="@android:color/holo_blue_bright"
-        android:text="LOGIN" />
+        android:text="Log In" />
 
     <TextView
         android:id="@+id/forgotpassword"
@@ -71,24 +72,21 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/password"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="@dimen/_40sdp"
+        android:layout_marginVertical="@dimen/_8sdp"
         android:gravity="right"
         android:text="Forgot password?"
         android:textColor="@color/white" />
+
     <TextView
         android:id="@+id/YouDontHaveAnAcount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/loginbtn"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="You do not have an account?"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:text="Need an account?"
         android:textColor="@color/white" />
 
     <com.google.android.material.button.MaterialButton
@@ -97,12 +95,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/YouDontHaveAnAcount"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="30dp"
+
         android:backgroundTint="@android:color/holo_blue_bright"
-        android:text="SING UP" />
+        android:text="Sign Up" />
 
     <ProgressBar
         android:id="@+id/progressbar"

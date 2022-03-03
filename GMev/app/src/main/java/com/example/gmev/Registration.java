@@ -34,6 +34,7 @@ public class Registration extends AppCompatActivity {
     private FirebaseAuth mAuth;
     EditText mFullName, mEmail, mPhoneNumber, mAddress,mVehicleModel, mYear, mVIN, mPassword1, mPassword2;
     MaterialButton mSubmit;
+    MaterialButton back;
     ProgressBar mProgressbar;
 
 
@@ -52,6 +53,8 @@ public class Registration extends AppCompatActivity {
         mSubmit = findViewById(R.id.submit);
         mAuth = FirebaseAuth.getInstance();
         mProgressbar = findViewById(R.id.progressbar);
+
+        back = findViewById(R.id.back);
 
 
         mSubmit.setOnClickListener(new View.OnClickListener() {
