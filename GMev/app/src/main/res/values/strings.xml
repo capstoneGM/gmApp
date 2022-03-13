@@ -9,5 +9,5 @@
     <string name="smartcar_auth_scheme">sc9ca426af-bd86-49fc-8773-1a4eed5f4891</string>
     <string name="smartcar_auth_host">exchange</string>
     <string name="client_id">9ca426af-bd86-49fc-8773-1a4eed5f4891</string>
-    <string name="app_server">http://10.0.2.2:5001/gm-app-3b84c/us-central1</string>
+    <string name="app_server">https://us-central1-gm-app-3b84c.cloudfunctions.net</string>
 </resources>

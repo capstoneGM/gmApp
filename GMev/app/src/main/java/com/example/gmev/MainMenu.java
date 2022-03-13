@@ -12,6 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.smartcar.sdk.SmartcarAuth;
 import com.smartcar.sdk.SmartcarCallback;
 import com.smartcar.sdk.SmartcarResponse;
@@ -37,11 +41,19 @@ public class MainMenu extends AppCompatActivity {
     private String carMake;
     private String carModel;
     private int carYear;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseUser currentUser;
+    private DatabaseReference userInfoRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        currentUser = firebaseAuth.getCurrentUser();
+
+        String userId = currentUser.getUid();
 
         //Charge bar objects
         final ProgressBar chargeBar = findViewById(R.id.charge_bar);
@@ -63,6 +75,20 @@ public class MainMenu extends AppCompatActivity {
         REDIRECT_URI = getString(R.string.smartcar_auth_scheme) + "://" + getString(R.string.smartcar_auth_host);
         SCOPE = new String[]{"required:read_vehicle_info", "required:read_battery"};
 
+
+
+//        charge = 90;
+//        carRange = (float) 314.44;
+//        carMake = "CHEVROLET";
+//        carModel = "Bolt";
+//        carYear = 2018;
+//
+//
+//        connection.setVisibility(View.GONE);
+//        updateCharge(chargeBar, chargePercent, range);
+//        updateVehicle(make, modelYear);
+//        carInfo.setVisibility(View.VISIBLE);
+
         smartcarAuth = new SmartcarAuth(
                 CLIENT_ID,
                 REDIRECT_URI,
@@ -75,11 +101,10 @@ public class MainMenu extends AppCompatActivity {
 
                         final OkHttpClient client = new OkHttpClient();
 
-                        //Create new thread for smartCar requests
                         new Thread(() -> {
                             //Send request to exchange auth code for access token
                             Request exchangeRequest = new Request.Builder()
-                                    .url(getString(R.string.app_server) + "/exchange?code=" + smartcarResponse.getCode())
+                                    .url(getString(R.string.app_server) + "/exchange?code=" + smartcarResponse.getCode() + "&id=" + userId)
                                     .build();
 
                             try {
@@ -90,7 +115,7 @@ public class MainMenu extends AppCompatActivity {
 
                             //Send request to retrieve info
                             Request infoRequest = new Request.Builder()
-                                    .url(getString(R.string.app_server) + "/vehicle")
+                                    .url(getString(R.string.app_server) + "/vehicle?id=" + userId)
                                     .build();
 
                             try {
