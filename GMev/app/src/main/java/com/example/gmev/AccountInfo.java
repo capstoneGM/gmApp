@@ -54,7 +54,6 @@ public class AccountInfo extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     accountInfo = new dto.AccountInfo((Map<String, String>) task.getResult().getValue());
-                    System.out.print(registrationInfo);
                     PopulateTextBoxes();
                 }
             });
