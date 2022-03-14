@@ -60,6 +60,7 @@ public class AccountInfo extends AppCompatActivity {
             });
         } else {
             registrationInfo = (dto.Registration) getIntent().getSerializableExtra("registration_info");
+            PopulateTextBoxes();
         }
 
         MaterialButton exitBtn = (MaterialButton) findViewById(R.id.exitbtn);
