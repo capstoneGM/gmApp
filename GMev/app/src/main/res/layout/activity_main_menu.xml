@@ -227,7 +227,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Manage Bank Info"
+            android:text="Balance"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginBottom="@dimen/_10sdp"

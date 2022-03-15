@@ -30,7 +30,7 @@ public class AccountInfo extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private FirebaseUser currentUser;
     private DatabaseReference userInfoRef;
-    private Map<String, String> data = new HashMap<>();
+    private Map<String, Object> data = new HashMap<>();
     private Boolean isLoggedIn;
 
     @Override
@@ -48,8 +48,7 @@ public class AccountInfo extends AppCompatActivity {
             userInfoRef.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    accountInfo = new dto.AccountInfo((Map<String, String>) task.getResult().getValue());
-                    System.out.print(registrationInfo);
+                    accountInfo = new dto.AccountInfo((Map<String, Object>) task.getResult().getValue());
                     PopulateTextBoxes();
                 }
             });
@@ -95,7 +94,7 @@ public class AccountInfo extends AppCompatActivity {
                         saveState();
                         userInfoRef.setValue(infoToHash());
                         Toast.makeText(AccountInfo.this, "Account Created.",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),BankInfo.class));
+                        startActivity(new Intent(getApplicationContext(), MainMenu.class));
                     } else {
                         //Toast.makeText(Registration.this, "missing fields"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                     }
@@ -112,8 +111,8 @@ public class AccountInfo extends AppCompatActivity {
         finish();
     }
 
-    private Map<String, String> infoToHash() {
-        Map<String, String> data = new HashMap<>();
+    private Map<String, Object> infoToHash() {
+        Map<String, Object> data = new HashMap<>();
 
         if (!isLoggedIn) {
             data.put("fullName", registrationInfo.fullName);
@@ -122,6 +121,7 @@ public class AccountInfo extends AppCompatActivity {
             data.put("vehicleModel", registrationInfo.vehicleModel);
             data.put("vehicleYear", registrationInfo.vehicleYear);
             data.put("vehicleIdNumber", registrationInfo.vehicleIdNumber);
+            data.put("balance", 0l);
         } else {
             data.put("fullName", accountInfo.fullName);
             data.put("phone", accountInfo.phone);
@@ -129,6 +129,7 @@ public class AccountInfo extends AppCompatActivity {
             data.put("vehicleModel", accountInfo.vehicleModel);
             data.put("vehicleYear", accountInfo.vehicleYear);
             data.put("vehicleIdNumber", accountInfo.vehicleIdNumber);
+            data.put("balance", accountInfo.accountBalance);
         }
 
         return data;
