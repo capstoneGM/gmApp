@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         checkCurrentUser();
 
-        mEmail = findViewById(R.id.email);
+        mEmail = findViewById(R.id.chargingStationAddress);
         mPassword = findViewById(R.id.password);
         loginbtn = (MaterialButton) findViewById(R.id.loginbtn);
         signupbtn = (MaterialButton) findViewById(R.id.signupbtn);

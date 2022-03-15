@@ -1,6 +1,5 @@
 package com.example.gmev;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,23 +9,10 @@ import android.view.View;
 import android.widget.EditText;
 
 import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
 
 
-
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
-
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
-import enums.Screens;
 
 public class Registration extends AppCompatActivity {
 
@@ -47,7 +33,7 @@ public class Registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        mEmail = findViewById(R.id.email);
+        mEmail = findViewById(R.id.chargingStationAddress);
         mPassword1 = findViewById(R.id.password1);
         mPassword2 = findViewById(R.id.password2);
         mSubmit = findViewById(R.id.submit);
@@ -101,7 +87,7 @@ public class Registration extends AppCompatActivity {
     public void openAccountInfo(){
         Intent intentAccountInfo = new Intent(this,AccountInfo.class);
 
-        registrationInfo.email = ((EditText)findViewById(R.id.email)).getText().toString();
+        registrationInfo.email = ((EditText)findViewById(R.id.chargingStationAddress)).getText().toString();
         registrationInfo.password = ((EditText)findViewById(R.id.password1)).getText().toString();
 
         intentAccountInfo.putExtra("registration_info", registrationInfo);

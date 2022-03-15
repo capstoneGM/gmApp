@@ -8,6 +8,12 @@
         <entry key="..\:/Users/khale/AndroidStudioProjects/GMev/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/khale/AndroidStudioProjects/GMev/app/src/main/res/layout/activity_main_menu.xml" value="0.1" />
         <entry key="..\:/Users/khale/AndroidStudioProjects/GMev/app/src/main/res/layout/activity_registration.xml" value="0.1796875" />
+        <entry key="app/src/main/res/layout/activity_account_info.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_bank_info.xml" value="0.140625" />
+        <entry key="app/src/main/res/layout/activity_charging_station_info.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.140625" />
+        <entry key="app/src/main/res/layout/activity_main_menu.xml" value="0.14583333333333334" />
+        <entry key="app/src/main/res/layout/activity_maps.xml" value="0.140625" />
       </map>
     </option>
   </component>

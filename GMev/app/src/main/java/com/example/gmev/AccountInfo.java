@@ -13,7 +13,6 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -21,12 +20,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
-
-import enums.Screens;
 
 public class AccountInfo extends AppCompatActivity {
     private dto.Registration registrationInfo;
@@ -141,29 +136,29 @@ public class AccountInfo extends AppCompatActivity {
 
     private void saveState() {
         if (!isLoggedIn) {
-            registrationInfo.fullName = ((EditText) findViewById(R.id.fullname)).getText().toString();
-            registrationInfo.phone = ((EditText) findViewById(R.id.phone)).getText().toString();
-            registrationInfo.address = ((EditText) findViewById(R.id.address)).getText().toString();
-            registrationInfo.vehicleModel = ((EditText) findViewById(R.id.vehiclemodel)).getText().toString();
+            registrationInfo.fullName = ((EditText) findViewById(R.id.price)).getText().toString();
+            registrationInfo.phone = ((EditText) findViewById(R.id.timeOpen)).getText().toString();
+            registrationInfo.address = ((EditText) findViewById(R.id.numStations)).getText().toString();
+            registrationInfo.vehicleModel = ((EditText) findViewById(R.id.chargerType)).getText().toString();
             registrationInfo.vehicleYear = ((EditText) findViewById(R.id.year)).getText().toString();
             registrationInfo.vehicleIdNumber = ((EditText) findViewById(R.id.vin)).getText().toString();
         } else {
-            accountInfo.email = ((EditText) findViewById(R.id.email)).getText().toString();
-            accountInfo.fullName = ((EditText) findViewById(R.id.fullname)).getText().toString();
-            accountInfo.phone = ((EditText) findViewById(R.id.phone)).getText().toString();
-            accountInfo.address = ((EditText) findViewById(R.id.address)).getText().toString();
-            accountInfo.vehicleModel = ((EditText) findViewById(R.id.vehiclemodel)).getText().toString();
+            accountInfo.email = ((EditText) findViewById(R.id.chargingStationAddress)).getText().toString();
+            accountInfo.fullName = ((EditText) findViewById(R.id.price)).getText().toString();
+            accountInfo.phone = ((EditText) findViewById(R.id.timeOpen)).getText().toString();
+            accountInfo.address = ((EditText) findViewById(R.id.numStations)).getText().toString();
+            accountInfo.vehicleModel = ((EditText) findViewById(R.id.chargerType)).getText().toString();
             accountInfo.vehicleYear = ((EditText) findViewById(R.id.year)).getText().toString();
             accountInfo.vehicleIdNumber = ((EditText) findViewById(R.id.vin)).getText().toString();
         }
     }
 
     private void PopulateTextBoxes() {
-        EditText fullName = (EditText) findViewById(R.id.fullname);
-        EditText email = (EditText) findViewById(R.id.email);
-        EditText phone = (EditText) findViewById(R.id.phone);
-        EditText address = (EditText) findViewById(R.id.address);
-        EditText model = (EditText) findViewById(R.id.vehiclemodel);
+        EditText fullName = (EditText) findViewById(R.id.price);
+        EditText email = (EditText) findViewById(R.id.chargingStationAddress);
+        EditText phone = (EditText) findViewById(R.id.timeOpen);
+        EditText address = (EditText) findViewById(R.id.numStations);
+        EditText model = (EditText) findViewById(R.id.chargerType);
         EditText year = (EditText) findViewById(R.id.year);
         EditText vin = (EditText) findViewById(R.id.vin);
 

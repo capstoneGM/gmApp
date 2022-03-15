@@ -26,6 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.Map;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -164,7 +165,8 @@ public class MainMenu extends AppCompatActivity {
         location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openGmMap("https://www.google.com/maps/search/electric+vehicles+charging+stations/@36.2031967,-94.1819611,12z/data=!3m1!4b1");
+//                openGmMap("https://www.google.com/maps/search/electric+vehicles+charging+stations/@36.2031967,-94.1819611,12z/data=!3m1!4b1");
+                openGmMap("");
             }
         });
 
@@ -197,8 +199,10 @@ public class MainMenu extends AppCompatActivity {
     }
 
     private void openGmMap(String s) {
-        Uri uri = Uri.parse(s);
-        startActivity(new Intent(Intent.ACTION_VIEW,uri));
+//        Uri uri = Uri.parse(s);
+//        startActivity(new Intent(Intent.ACTION_VIEW,uri));
+        Intent mapIntent = new Intent(this, MapsActivity.class);
+        startActivity(mapIntent);
     }
 
     private void logout(){

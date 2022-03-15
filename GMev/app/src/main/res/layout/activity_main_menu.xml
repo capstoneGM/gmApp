@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/secondary_bg"
+    android:background="@android:color/holo_blue_light"
     tools:context=".MainMenu">
 
     <View
         android:id="@+id/viewHeaderBackground"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_125sdp"
-        android:background="@color/teal_700"
+        android:background="@android:color/holo_blue_bright"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -35,7 +35,7 @@
         android:layout_marginEnd="@dimen/_16sdp"
         android:clickable="true"
         app:cardElevation="@dimen/_1sdp"
-        app:cardBackgroundColor="@color/teal_200"
+        app:cardBackgroundColor="@android:color/holo_blue_dark"
         app:cardCornerRadius="@dimen/_16sdp"
         app:layout_constraintBottom_toBottomOf="@id/viewHeaderBackground"
         app:layout_constraintTop_toBottomOf="@id/viewHeaderBackground">
@@ -46,7 +46,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="@dimen/_10sdp"
             android:textSize="@dimen/_15sdp"
-            android:text="Connect to Car" />
+            android:text="Connect to Car"
+            android:textColor="@color/secondary_bg"/>
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
@@ -57,7 +58,7 @@
         android:layout_marginEnd="@dimen/_16sdp"
         android:visibility="invisible"
         app:cardElevation="@dimen/_1sdp"
-        app:cardBackgroundColor="@color/teal_200"
+        app:cardBackgroundColor="@android:color/holo_blue_dark"
         app:cardCornerRadius="@dimen/_16sdp"
         app:layout_constraintBottom_toBottomOf="@id/viewHeaderBackground"
         app:layout_constraintTop_toBottomOf="@id/viewHeaderBackground">
@@ -143,7 +144,7 @@
         android:layout_marginTop="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_4sdp"
         android:clickable="true"
-        app:cardBackgroundColor="@color/teal_200"
+        app:cardBackgroundColor="@android:color/holo_blue_dark"
         app:cardCornerRadius="@dimen/_16sdp"
         app:cardElevation="@dimen/_1sdp"
         app:layout_constraintEnd_toStartOf="@id/charger_card"
@@ -163,7 +164,8 @@
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:text="Profile" />
+            android:text="Profile"
+            android:textColor="@color/secondary_bg"/>
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -175,7 +177,7 @@
         android:layout_marginTop="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_16sdp"
         android:clickable="true"
-        app:cardBackgroundColor="@color/teal_200"
+        app:cardBackgroundColor="@android:color/holo_blue_dark"
         app:cardCornerRadius="@dimen/_16sdp"
         app:cardElevation="@dimen/_1sdp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -195,7 +197,8 @@
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:text="Locate Charger" />
+            android:text="Locate Charger"
+            android:textColor="@color/secondary_bg"/>
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -208,7 +211,7 @@
         android:layout_marginStart="@dimen/_16sdp"
         android:layout_marginEnd="@dimen/_4sdp"
         app:cardElevation="@dimen/_1sdp"
-        app:cardBackgroundColor="@color/teal_200"
+        app:cardBackgroundColor="@android:color/holo_blue_dark"
         app:cardCornerRadius="@dimen/_16sdp"
         app:layout_constraintTop_toBottomOf="@id/profile_card"
         app:layout_constraintEnd_toStartOf="@id/logout_card"
@@ -227,7 +230,8 @@
             android:text="Manage Bank Info"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginBottom="@dimen/_10sdp"/>
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:textColor="@color/secondary_bg"/>
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -240,7 +244,7 @@
         android:layout_marginStart="@dimen/_4sdp"
         android:layout_marginEnd="@dimen/_16sdp"
         app:cardElevation="@dimen/_1sdp"
-        app:cardBackgroundColor="@color/teal_200"
+        app:cardBackgroundColor="@android:color/holo_blue_dark"
         app:cardCornerRadius="@dimen/_16sdp"
         app:layout_constraintTop_toBottomOf="@id/charger_card"
         app:layout_constraintStart_toEndOf="@id/bank_card"
@@ -259,7 +263,8 @@
             android:text="Log Out"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginBottom="@dimen/_10sdp"/>
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:textColor="@color/secondary_bg"/>
 
     </com.google.android.material.card.MaterialCardView>
 

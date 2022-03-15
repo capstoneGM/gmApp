@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/black"
+tools:context=".ChargingStationInfo">
+
+
+<View
+    android:id="@+id/viewHeaderBackground"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/black"
-    tools:context=".AccountInfo">
-
-
-    <View
-        android:id="@+id/viewHeaderBackground"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_70sdp"
-        android:background="@android:color/holo_blue_bright"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:layout_height="@dimen/_70sdp"
+    android:background="@android:color/holo_blue_bright"
+    app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/chargingStationName"
@@ -26,43 +26,12 @@
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginEnd="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_22sdp"
+        android:editable="false"
         android:gravity="center"
-        android:text="@string/account_information"
+        android:text="Charging Station"
         android:textColor="@color/white"
         android:textSize="35sp"
         android:textStyle="bold" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/exitbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/account_info_submit"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="-25dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="30dp"
-        android:backgroundTint="@android:color/holo_blue_bright"
-        android:minHeight="48dp"
-        android:text="@string/account_info_back"
-        android:textColor="@color/white"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/account_info_submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/vin"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="30dp"
-        android:backgroundTint="@android:color/holo_blue_bright"
-        android:text="@string/account_info_submit"
-        android:textColor="@color/white" />
 
     <EditText
         android:id="@+id/price"
@@ -74,7 +43,9 @@
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
         android:drawablePadding="20dp"
-        android:hint="First and last name"
+        android:editable="false"
+        android:enabled="false"
+        android:hint="price"
         android:minHeight="48dp"
         android:padding="10dp"
         android:textColor="@color/white"
@@ -89,9 +60,10 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:drawableLeft="@drawable/ic_baseline_email_24"
         android:drawablePadding="20dp"
-        android:hint="Email"
+        android:editable="false"
+        android:enabled="false"
+        android:hint="address"
         android:minHeight="48dp"
         android:padding="10dp"
         android:textColor="@color/white"
@@ -106,8 +78,8 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:drawableLeft="@drawable/ic_baseline_phone_24"
         android:drawablePadding="20dp"
+        android:editable="false"
         android:hint="phone number"
         android:minHeight="48dp"
         android:padding="10dp"
@@ -123,7 +95,8 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:hint="Address"
+        android:editable="false"
+        android:hint="number of stations"
         android:minHeight="48dp"
         android:padding="10dp"
         android:textColor="@color/white"
@@ -138,37 +111,8 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:hint="Vehicle Model"
-        android:minHeight="48dp"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white" />
-
-    <EditText
-        android:id="@+id/year"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/chargerType"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:hint="Year"
-        android:minHeight="48dp"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white" />
-
-    <EditText
-        android:id="@+id/vin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/year"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:hint="Vehicle Identification Number"
+        android:editable="false"
+        android:hint="charger type"
         android:minHeight="48dp"
         android:padding="10dp"
         android:textColor="@color/white"
