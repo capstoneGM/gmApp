@@ -50,9 +50,9 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
+        //Firebase User
         firebaseAuth = FirebaseAuth.getInstance();
         currentUser = firebaseAuth.getCurrentUser();
-
         String userId = currentUser.getUid();
 
         //Charge bar objects
@@ -75,19 +75,6 @@ public class MainMenu extends AppCompatActivity {
         REDIRECT_URI = getString(R.string.smartcar_auth_scheme) + "://" + getString(R.string.smartcar_auth_host);
         SCOPE = new String[]{"required:read_vehicle_info", "required:read_battery"};
 
-
-
-//        charge = 90;
-//        carRange = (float) 314.44;
-//        carMake = "CHEVROLET";
-//        carModel = "Bolt";
-//        carYear = 2018;
-//
-//
-//        connection.setVisibility(View.GONE);
-//        updateCharge(chargeBar, chargePercent, range);
-//        updateVehicle(make, modelYear);
-//        carInfo.setVisibility(View.VISIBLE);
 
         smartcarAuth = new SmartcarAuth(
                 CLIENT_ID,
