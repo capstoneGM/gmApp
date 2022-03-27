@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@android:color/holo_blue_light"
     tools:context=".AccountInfo">
 
 
@@ -17,8 +17,7 @@
 
     <TextView
         android:id="@+id/accountInformation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/SectionTitle"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_gravity="center"
@@ -27,42 +26,34 @@
         android:layout_marginEnd="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_22sdp"
         android:gravity="center"
-        android:text="@string/account_information"
-        android:textColor="@color/white"
-        android:textSize="35sp"
-        android:textStyle="bold" />
+        android:text="@string/account_information" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/exitbtn"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/account_info_submit"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="-25dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="30dp"
-        android:backgroundTint="@android:color/holo_blue_bright"
-        android:minHeight="48dp"
-        android:text="@string/account_info_back"
-        android:textColor="@color/white"
-        tools:ignore="TouchTargetSizeCheck" />
+        android:layout_below="@id/vin"
+        android:padding="@dimen/_14sdp">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/account_info_submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/vin"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="30dp"
-        android:backgroundTint="@android:color/holo_blue_bright"
-        android:text="@string/account_info_submit"
-        android:textColor="@color/white" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/account_info_submit"
+            style="@style/Button"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:text="Next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/exitbtn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/exitbtn"
+            style="@style/Button"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:text="Back"
+            app:layout_constraintEnd_toStartOf="@+id/account_info_submit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
         android:id="@+id/fullname"
@@ -73,6 +64,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="20dp"
         android:hint="First and last name"
         android:minHeight="48dp"
@@ -123,6 +115,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
+        android:drawableLeft="@drawable/ic_baseline_location_on_24"
         android:hint="Address"
         android:minHeight="48dp"
         android:padding="10dp"

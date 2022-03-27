@@ -86,6 +86,13 @@ public class Registration extends AppCompatActivity {
                 openAccountInfo();
             }
         });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     @Override
