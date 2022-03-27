@@ -10,9 +10,7 @@
 
     <View
         android:id="@+id/viewHeaderBackground"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_70sdp"
-        android:background="@android:color/holo_blue_bright"
+        style="@style/header"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView

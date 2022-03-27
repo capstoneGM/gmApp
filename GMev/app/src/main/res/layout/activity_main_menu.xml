@@ -9,9 +9,9 @@
 
     <View
         android:id="@+id/viewHeaderBackground"
-        android:layout_width="match_parent"
+        style="@style/header"
         android:layout_height="@dimen/_125sdp"
-        android:background="@android:color/holo_blue_bright"
+        android:elevation="@dimen/_5sdp"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -30,6 +30,7 @@
         android:layout_width="match_parent"
         android:layout_marginStart="@dimen/_16sdp"
         android:layout_marginEnd="@dimen/_16sdp"
+        app:cardElevation="@dimen/_6sdp"
         app:layout_constraintBottom_toBottomOf="@id/viewHeaderBackground"
         app:layout_constraintTop_toBottomOf="@id/viewHeaderBackground">
 
