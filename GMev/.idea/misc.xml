@@ -3,6 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmApp/GMev/app/src/main/res/drawable/border.xml" value="0.590625" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmApp/GMev/app/src/main/res/drawable/borderDark.xml" value="0.590625" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmApp/GMev/app/src/main/res/drawable/border_dark.xml" value="0.590625" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmApp/GMev/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.590625" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmApp/GMev/app/src/main/res/font/font.xml" value="0.14074074074074075" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmApp/GMev/app/src/main/res/font/heebo.xml" value="0.13425925925925927" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmApp/GMev/app/src/main/res/font/heebo_black.xml" value="0.3314814814814815" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmApp/GMev/app/src/main/res/font/heebo_bold.xml" value="0.6046875" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmApp/GMev/app/src/main/res/font/mukta.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmApp/GMev/app/src/main/res/font/mukta_medium.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmApp/GMev/app/src/main/res/font/noto_sans_bold.xml" value="0.14074074074074075" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmApp/GMev/app/src/main/res/layout/activity_account_balance.xml" value="0.5744791666666667" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmApp/GMev/app/src/main/res/layout/activity_account_info.xml" value="0.2793819655521783" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmApp/GMev/app/src/main/res/layout/activity_bank_info.xml" value="0.4569746376811594" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmApp/GMev/app/src/main/res/layout/activity_main.xml" value="0.2479208810968757" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmApp/GMev/app/src/main/res/layout/activity_main_menu.xml" value="0.5" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmApp/GMev/app/src/main/res/layout/activity_registration.xml" value="0.2796296296296296" />
         <entry key="..\:/Users/khale/AndroidStudioProjects/GMev/app/src/main/res/layout/activity_account_balance.xml" value="0.1" />
         <entry key="..\:/Users/khale/AndroidStudioProjects/GMev/app/src/main/res/layout/activity_bank_info.xml" value="0.1" />
         <entry key="..\:/Users/khale/AndroidStudioProjects/GMev/app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -16,5 +33,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.5" />
+      </ProjectState>
+    </option>
   </component>
 </project>

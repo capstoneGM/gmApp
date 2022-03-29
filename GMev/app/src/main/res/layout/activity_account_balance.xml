@@ -16,6 +16,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="20dp"
+        android:fontFamily="@font/heebo"
         android:text="Account balance"
         android:textColor="@color/white"
         android:textSize="35dp"
