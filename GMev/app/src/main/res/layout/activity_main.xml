@@ -1,111 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/black"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/signin"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/box"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="@dimen/_45sdp"
-        android:layout_marginTop="@dimen/_35sdp"
-        android:layout_marginEnd="@dimen/_45sdp"
-        android:layout_marginBottom="@dimen/_20sdp"
-        android:text="Sign in"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_20ssp"
-        android:textStyle="bold" />
+        android:layout_height="@dimen/_304sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:background="@drawable/border_dark"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <EditText
-        android:id="@+id/chargingStationAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/signin"
-        android:layout_marginHorizontal="@dimen/_40sdp"
-        android:layout_marginBottom="@dimen/_3sdp"
-        android:background="@drawable/border"
-        android:drawableLeft="@drawable/ic_baseline_person_24"
-        android:drawablePadding="@dimen/_15ssp"
-        android:hint="Email address"
-        android:padding="@dimen/_10sdp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black" />
+        <TextView
+            android:id="@+id/signin"
+            style="@style/SectionTitle"
+            android:text="Sign In"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/chargingStationAddress"
-        android:hint="Password"
-        android:background="@drawable/border"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:layout_marginHorizontal="@dimen/_40sdp"
-        android:layout_marginTop="@dimen/_3sdp"
-        android:padding="@dimen/_10sdp"
-        android:drawableLeft="@drawable/ic_baseline_lock_24"
-        android:drawablePadding="@dimen/_10sdp"
-        android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/chargingStationAddress"
+            style="@style/AccountInput"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawableLeft="@drawable/ic_baseline_person_24"
+            android:hint="Email Address"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signin"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/loginbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/forgotpassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginHorizontal="@dimen/_15sdp"
-        android:layout_marginStart="@dimen/_15sdp"
-        android:layout_marginTop="@dimen/_2sdp"
-        android:layout_marginEnd="@dimen/_15sdp"
-        android:layout_marginBottom="@dimen/_15sdp"
-        android:backgroundTint="@android:color/holo_blue_bright"
-        android:text="Log In" />
+        <EditText
+            android:id="@+id/password"
+            style="@style/AccountInput"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:hint="Password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chargingStationAddress"/>
 
-    <TextView
-        android:id="@+id/forgotpassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginHorizontal="@dimen/_40sdp"
-        android:layout_marginVertical="@dimen/_4sdp"
-        android:gravity="right"
-        android:text="Forgot password?"
-        android:textColor="@color/white" />
+        <TextView
+            android:id="@+id/forgotpassword"
+            style="@style/textButton"
+            android:text="Forgot Password?"
+            android:layout_marginRight="@dimen/_16sdp"
+            app:layout_constraintTop_toBottomOf="@id/password"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-    <TextView
-        android:id="@+id/YouDontHaveAnAcount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/loginbtn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginHorizontal="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_4sdp"
-        android:text="Need an account?"
-        android:textColor="@color/white" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginbtn"
+            style="@style/Button"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintTop_toBottomOf="@id/forgotpassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Log In" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/signupbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/YouDontHaveAnAcount"
-        android:layout_centerHorizontal="true"
+        <TextView
+            android:id="@+id/YouDontHaveAnAcount"
+            style="@style/text"
+            android:text="Need an account?"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@id/loginbtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-        android:backgroundTint="@android:color/holo_blue_bright"
-        android:text="Sign Up" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signupbtn"
+            style="@style/Button"
+            app:layout_constraintTop_toBottomOf="@id/YouDontHaveAnAcount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Sign Up" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ProgressBar
         android:id="@+id/progressbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progressbar"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:visibility="gone"-->
 
     />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
