@@ -18,7 +18,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/_65sdp</item>
         <item name="android:background">?attr/colorPrimary</item>
-        <item name="android:elevation">@dimen/_15sdp</item>
+        <item name="android:elevation">@dimen/_5sdp</item>
     </style>
     <style name="Button" parent="@style/Widget.MaterialComponents.Button">
         <item name="android:layout_width">wrap_content</item>
