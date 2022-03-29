@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">GMev</string>
+    <string name="account_information">Account Information</string>
+    <string name="account_info_back">BACK</string>
+    <string name="account_info_submit">SUBMIT</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+
+    <string name="smartcar_auth_scheme">sc9ca426af-bd86-49fc-8773-1a4eed5f4891</string>
+    <string name="smartcar_auth_host">exchange</string>
+    <string name="client_id">9ca426af-bd86-49fc-8773-1a4eed5f4891</string>
+    <string name="app_server">https://us-central1-gm-app-3b84c.cloudfunctions.net</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>
