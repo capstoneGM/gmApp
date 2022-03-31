@@ -12,7 +12,7 @@ import org.w3c.dom.Text;
 
 public class ChargingStationInfo extends AppCompatActivity {
 
-    EditText etPrice, etAddress, etTimeOpen, etNumStations, etChargerType;
+    TextView etPrice, etAddress, etTimeOpen, etNumStations, etChargerType;
     static String id;
 
 
