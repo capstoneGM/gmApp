@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimaryVariant"
+    tools:context=".MainMenu">
+
+    <View
+        android:id="@+id/viewHeaderBackground"
+        style="@style/header"
+        android:layout_height="@dimen/_125sdp"
+        android:elevation="@dimen/_5sdp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/headerText"
+        style="@style/SectionTitle"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:text="Home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/connect_card"
+        style="@style/buttonCard"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        app:cardElevation="@dimen/_6sdp"
+        app:layout_constraintBottom_toBottomOf="@id/viewHeaderBackground"
+        app:layout_constraintTop_toBottomOf="@id/viewHeaderBackground">
+
+        <TextView
+            style="@style/text"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:textSize="@dimen/_16sdp"
+            android:text="Connect to Car"
+            android:textStyle="bold"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/vehicle_card"
+        style="@style/buttonCard"
+        android:clickable="false"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/viewHeaderBackground"
+        app:layout_constraintTop_toBottomOf="@id/viewHeaderBackground">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_14sdp">
+
+            <ProgressBar
+                android:id="@+id/charge_bar"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:indeterminateOnly="false"
+                android:progressDrawable="@drawable/circle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:progress="60" />
+
+            <TextView
+                android:id="@+id/charge_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/secondary_bg"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/charge_bar"
+                app:layout_constraintEnd_toEndOf="@+id/charge_bar"
+                app:layout_constraintStart_toStartOf="@+id/charge_bar"
+                app:layout_constraintTop_toTopOf="@id/charge_bar"
+                tools:text="60%" />
+
+            <TextView
+                android:id="@+id/vehicle_make"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="74dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:text="vehicle make"
+                android:textColor="@color/secondary_bg"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.052"
+                app:layout_constraintStart_toEndOf="@+id/charge_bar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/vehicle_model_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="95dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:text="model year"
+                android:textColor="@color/secondary_bg"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/charge_bar"
+                app:layout_constraintTop_toBottomOf="@id/vehicle_make" />
+
+            <TextView
+                android:id="@+id/vehicle_range"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="95dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:text="Range: 10"
+                android:textColor="@color/secondary_bg"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/charge_bar"
+                app:layout_constraintTop_toBottomOf="@id/vehicle_model_year" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/profile_card"
+        style="@style/buttonCard"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        app:layout_constraintEnd_toStartOf="@id/charger_card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vehicle_card">
+
+        <ImageView
+            style="@style/cardImage"
+            android:src="@drawable/ic_baseline_person_24" />
+
+        <TextView
+            style="@style/text"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:text="Profile" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/charger_card"
+        style="@style/buttonCard"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profile_card"
+        app:layout_constraintTop_toBottomOf="@id/vehicle_card">
+
+        <ImageView
+            style="@style/cardImage"
+            android:src="@drawable/ic_baseline_location_on_24" />
+
+        <TextView
+            style="@style/text"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:text="Locate Charger" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bank_card"
+        style="@style/buttonCard"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        app:layout_constraintTop_toBottomOf="@id/profile_card"
+        app:layout_constraintEnd_toStartOf="@id/logout_card"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            style="@style/cardImage"
+            android:src="@drawable/ic_baseline_account_balance_24"
+            android:layout_margin="@dimen/_20sdp" />
+
+        <TextView
+            style="@style/text"
+            android:text="Manage Bank Info"
+            android:layout_gravity="bottom|center_horizontal"
+
+            android:layout_marginBottom="@dimen/_5sdp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/logout_card"
+        style="@style/buttonCard"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        app:layout_constraintTop_toBottomOf="@id/charger_card"
+        app:layout_constraintStart_toEndOf="@id/bank_card"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            style="@style/cardImage"
+            android:src="@drawable/ic_baseline_logout_24" />
+
+        <TextView
+            style="@style/text"
+            android:text="Log Out"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="@dimen/_5sdp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

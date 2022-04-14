@@ -18,9 +18,6 @@
         android:theme="@style/Theme.GMev"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ForgetPassword"
-            android:exported="false" />
-        <activity
             android:name=".ChargingStationInfo"
             android:exported="false" />
         <!--

@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         signupbtn = (MaterialButton) findViewById(R.id.signupbtn);
         progressBar = findViewById(R.id.progressbar);
         mAuth = FirebaseAuth.getInstance();
-        TextView forgotpassword = (TextView) findViewById((R.id.forgotpassword));
+
 
         loginbtn.setOnClickListener((new View.OnClickListener() {
             @Override
@@ -100,10 +99,4 @@ public class MainActivity extends AppCompatActivity {
             openMainMenu();
         }
     }
-    public void callForgetPassword(View view) {
-        Intent intent = new Intent(getApplicationContext(),ForgetPassword.class);
-        startActivity((intent));
-        // Toast.makeText(getApplicationContext(),"You clicked me", Toast.LENGTH_SHORT).show();
-    }
-
 }
