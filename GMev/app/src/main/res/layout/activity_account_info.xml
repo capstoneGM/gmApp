@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-        android:id="@+id/chargingStationName"
+        android:id="@+id/accountInformation"
         style="@style/SectionTitle"
         android:text="Account Information"
         android:layout_marginTop="@dimen/_20sdp"
@@ -26,59 +26,67 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
-        android:id="@+id/price"
+        android:id="@+id/name"
         style="@style/BlankInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginLeft="@dimen/_15sdp"
         android:layout_marginRight="@dimen/_15sdp"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawablePadding="@dimen/_10sdp"
         android:hint="First and last name"
         app:layout_constraintTop_toBottomOf="@id/viewHeaderBackground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <EditText
-        android:id="@+id/chargingStationAddress"
+        android:id="@+id/emailAddress"
         style="@style/BlankInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginLeft="@dimen/_15sdp"
         android:layout_marginRight="@dimen/_15sdp"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
+        android:drawablePadding="@dimen/_10sdp"
         android:hint="Email"
-        app:layout_constraintTop_toBottomOf="@id/price"
+        app:layout_constraintTop_toBottomOf="@id/name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <EditText
-        android:id="@+id/timeOpen"
+        android:id="@+id/phoneNum"
         style="@style/BlankInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginLeft="@dimen/_15sdp"
         android:layout_marginRight="@dimen/_15sdp"
+        android:drawableLeft="@drawable/ic_baseline_phone_24"
+        android:drawablePadding="@dimen/_10sdp"
         android:hint="Phone Number"
-        app:layout_constraintTop_toBottomOf="@id/chargingStationAddress"
+        app:layout_constraintTop_toBottomOf="@id/emailAddress"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <EditText
-        android:id="@+id/numStations"
+        android:id="@+id/address"
         style="@style/BlankInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginLeft="@dimen/_15sdp"
         android:layout_marginRight="@dimen/_15sdp"
+        android:drawableLeft="@drawable/ic_baseline_location_on_24"
+        android:drawablePadding="@dimen/_10sdp"
         android:hint="Address"
-        app:layout_constraintTop_toBottomOf="@id/timeOpen"
+        app:layout_constraintTop_toBottomOf="@id/phoneNum"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <EditText
-        android:id="@+id/chargerType"
+        android:id="@+id/vehicleModel"
         style="@style/BlankInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,7 +94,7 @@
         android:layout_marginLeft="@dimen/_15sdp"
         android:layout_marginRight="@dimen/_15sdp"
         android:hint="Vehicle Model"
-        app:layout_constraintTop_toBottomOf="@id/numStations"
+        app:layout_constraintTop_toBottomOf="@id/address"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -99,7 +107,7 @@
         android:layout_marginLeft="@dimen/_15sdp"
         android:layout_marginRight="@dimen/_15sdp"
         android:hint="Year"
-        app:layout_constraintTop_toBottomOf="@id/chargerType"
+        app:layout_constraintTop_toBottomOf="@id/vehicleModel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

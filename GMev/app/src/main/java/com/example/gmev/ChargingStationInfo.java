@@ -5,14 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.google.android.material.button.MaterialButton;
 
 import org.w3c.dom.Text;
 
 public class ChargingStationInfo extends AppCompatActivity {
 
     TextView etPrice, etAddress, etTimeOpen, etNumStations, etChargerType;
+    MaterialButton exitBtn;
     static String id;
 
 
@@ -30,6 +34,7 @@ public class ChargingStationInfo extends AppCompatActivity {
         etTimeOpen = findViewById(R.id.timeOpen);
         etNumStations = findViewById(R.id.numStations);
         etChargerType = findViewById(R.id.chargerType);
+        exitBtn = findViewById(R.id.exitbtn);
 
         if (id.equals("1")) {
             ((TextView)findViewById(R.id.price)).setText("$0.1331/kWH");
@@ -59,6 +64,13 @@ public class ChargingStationInfo extends AppCompatActivity {
             ((TextView)findViewById(R.id.numStations)).setText("Available: 4/4");
             ((TextView)findViewById(R.id.chargerType)).setText("CHAdeMO");
         }
+
+        exitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 }

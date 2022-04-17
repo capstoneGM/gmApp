@@ -48,6 +48,18 @@
         <item name="android:textColorHint">?attr/colorOnPrimary</item>
         <item name="android:elevation">@dimen/_10sdp</item>
     </style>
+
+    <style name="Label" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:padding">@dimen/_5sdp</item>
+        <item name="android:drawablePadding">@dimen/_15ssp</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textColorHint">?attr/colorOnPrimary</item>
+        <item name="android:elevation">@dimen/_10sdp</item>
+    </style>
+
     <style name="SectionTitle" parent="@style/TextAppearance.AppCompat">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -70,6 +82,14 @@
         <item name="android:textSize">@dimen/_12ssp</item>
     </style>
     <style name="buttonCard" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">true</item>
+        <item name="cardBackgroundColor">?attr/colorSecondary</item>
+        <item name="cardCornerRadius">@dimen/_16sdp</item>
+        <item name="cardElevation">@dimen/_7sdp</item>
+    </style>
+    <style name="logoutCard" parent="@style/Widget.MaterialComponents.CardView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:clickable">true</item>

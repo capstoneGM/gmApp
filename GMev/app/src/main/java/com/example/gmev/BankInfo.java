@@ -36,7 +36,8 @@ public class BankInfo extends AppCompatActivity {
         });
     }
     public void openMainMenu(){
-        Intent intenMain = new Intent(this,MainMenu.class);
-        startActivity(intenMain);
+//        Intent intenMain = new Intent(this,MainMenu.class);
+//        startActivity(intenMain);
+        finish();
     }
 }

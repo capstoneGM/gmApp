@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class ForgetPassword extends AppCompatActivity {
     EditText emaiEditText;
     MaterialButton resetPasswordb;
+    MaterialButton exitbtn;
 
     ProgressBar progressBar;
     private FirebaseAuth Auth;
@@ -30,6 +31,7 @@ public class ForgetPassword extends AppCompatActivity {
 
         emaiEditText= (EditText) findViewById(R.id.email);
         resetPasswordb=(MaterialButton) findViewById(R.id.resetPasswordbtn);
+        exitbtn = (MaterialButton) findViewById(R.id.exitBtn);
         progressBar=(ProgressBar) findViewById(R.id.progressbar);
 
         Auth=FirebaseAuth.getInstance();
@@ -37,8 +39,14 @@ public class ForgetPassword extends AppCompatActivity {
         resetPasswordb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 resetPassword();
+            }
+        });
+
+        exitbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 

@@ -5,6 +5,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -67,28 +69,19 @@ public class MainMenu extends AppCompatActivity {
         MaterialCardView profile = (MaterialCardView) findViewById(R.id.profile_card);
         MaterialCardView location = (MaterialCardView) findViewById(R.id.charger_card);
         MaterialCardView bank = (MaterialCardView) findViewById(R.id.bank_card);
-        MaterialCardView logOut = (MaterialCardView) findViewById(R.id.logout_card);
+        ImageButton logOut = (ImageButton) findViewById(R.id.logout_btn);
         MaterialCardView connection = (MaterialCardView) findViewById(R.id.connect_card);
         MaterialCardView carInfo = (MaterialCardView) findViewById(R.id.vehicle_card);
+
+        //objects
+        final ProgressBar pBar = findViewById(R.id.progress_bar);
+        final TextView connectText = findViewById(R.id.connect_text);
+
 
         //SmartCar initialization
         CLIENT_ID = getString(R.string.client_id);
         REDIRECT_URI = getString(R.string.smartcar_auth_scheme) + "://" + getString(R.string.smartcar_auth_host);
         SCOPE = new String[]{"required:read_vehicle_info", "required:read_battery"};
-
-
-
-//        charge = 90;
-//        carRange = (float) 314.44;
-//        carMake = "CHEVROLET";
-//        carModel = "Bolt";
-//        carYear = 2018;
-//
-//
-//        connection.setVisibility(View.GONE);
-//        updateCharge(chargeBar, chargePercent, range);
-//        updateVehicle(make, modelYear);
-//        carInfo.setVisibility(View.VISIBLE);
 
         smartcarAuth = new SmartcarAuth(
                 CLIENT_ID,
@@ -101,6 +94,9 @@ public class MainMenu extends AppCompatActivity {
                         Log.d("SmartcarAuth", "authorization code: " + smartcarResponse.getCode());
 
                         final OkHttpClient client = new OkHttpClient();
+
+                        connectText.setVisibility(View.GONE);
+                        pBar.setVisibility(View.VISIBLE);
 
                         new Thread(() -> {
                             //Send request to exchange auth code for access token
@@ -216,7 +212,7 @@ public class MainMenu extends AppCompatActivity {
     private void updateCharge(ProgressBar chargeBar, TextView chargePercent, TextView range) {
         chargeBar.setProgress(charge);
         chargePercent.setText(String.valueOf(charge) + "%");
-        range.setText("Range: " + String.valueOf(carRange));
+        range.setText("Range: " + String.valueOf(carRange) + " Mi");
     }
 
     private void updateVehicle(TextView make, TextView modelYear) {

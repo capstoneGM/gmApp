@@ -78,8 +78,9 @@ public class AccountBalance extends AppCompatActivity {
     }
 
     public void openMainMenu() {
-        Intent intentExit = new Intent(this, MainMenu.class);
-        startActivity(intentExit);
+//        Intent intentExit = new Intent(this, MainMenu.class);
+//        startActivity(intentExit);
+        finish();
     }
 
     public void openPaypalSignin() {

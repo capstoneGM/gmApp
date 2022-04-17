@@ -89,4 +89,13 @@ tools:context=".ChargingStationInfo">
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/exitbtn"
+        style="@style/Button"
+        android:text="Back"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chargerType"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
