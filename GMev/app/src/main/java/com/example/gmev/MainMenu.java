@@ -69,7 +69,7 @@ public class MainMenu extends AppCompatActivity {
         MaterialCardView profile = (MaterialCardView) findViewById(R.id.profile_card);
         MaterialCardView location = (MaterialCardView) findViewById(R.id.charger_card);
         MaterialCardView bank = (MaterialCardView) findViewById(R.id.bank_card);
-        ImageButton logOut = (ImageButton) findViewById(R.id.logout_btn);
+        MaterialCardView logOut = (MaterialCardView) findViewById(R.id.logout_btn);
         MaterialCardView connection = (MaterialCardView) findViewById(R.id.connect_card);
         MaterialCardView carInfo = (MaterialCardView) findViewById(R.id.vehicle_card);
 

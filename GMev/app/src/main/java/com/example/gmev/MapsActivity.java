@@ -2,12 +2,14 @@ package com.example.gmev;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.RawRes;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -32,9 +34,20 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.TileOverlay;
+import com.google.android.gms.maps.model.TileOverlayOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.maps.android.heatmaps.HeatmapTileProvider;
+import com.google.maps.android.heatmaps.WeightedLatLng;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 import javax.sql.DataSource;
 
@@ -199,6 +212,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setMarker(36.064694, -94.158004);
         setMarker(36.062699, -94.156759);
         setMarker(36.060982, -94.158882);
+        addHeatMap();
     }
 
     //sets marker on the map and makes it clickable
@@ -237,4 +251,38 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // marker is centered and for the marker's info window to open, if it has one).
         return false;
     }
+    private void addHeatMap() {
+        List<LatLng> latLngs = null;
+        List<WeightedLatLng> weightedlatLngs = null;
+        Context context = this;
+        weightedlatLngs = stations();
+        // Create a heat map tile provider, passing it the latlngs of the police stations.
+        HeatmapTileProvider provider = new HeatmapTileProvider.Builder()
+                .weightedData(weightedlatLngs)
+                .build();
+        provider.setRadius(50);
+        // Add a tile overlay to the map, using the heat map tile provider.
+        TileOverlay overlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(provider));
+    }
+
+
+    private List<WeightedLatLng> stations(){
+        List<WeightedLatLng> result2 = new ArrayList<>();
+
+        LatLng one = new LatLng(36.063757, -94.161673);
+        result2.add(new WeightedLatLng(one,.05));
+
+        LatLng two = new LatLng(36.064694, -94.158004);
+        result2.add(new WeightedLatLng(two,.6));
+
+        LatLng three = new LatLng(36.062699, -94.156759);
+        result2.add(new WeightedLatLng(three, 1));
+
+        LatLng four = new LatLng(36.060982, -94.158882);
+        result2.add(new WeightedLatLng(four, .2));
+
+        return result2;
+    }
+
+
 }
