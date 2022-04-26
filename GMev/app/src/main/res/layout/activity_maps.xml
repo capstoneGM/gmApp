@@ -22,7 +22,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/markerToggle"
         style="@style/Button"
-        android:text="Pins"
+        android:text="Chargers"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_16sdp"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/heatMapToggle"
         style="@style/Button"
-        android:text="Heatmap"
+        android:text="Need Areas"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_16sdp"
         app:layout_constraintEnd_toEndOf="parent"
