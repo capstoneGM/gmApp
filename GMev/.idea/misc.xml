@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmAppBackup/GMev/app/src/main/res/layout/activity_account_balance.xml" value="0.21388888888888888" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmAppBackup/GMev/app/src/main/res/layout/activity_account_info.xml" value="0.2740740740740741" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmAppBackup/GMev/app/src/main/res/layout/activity_charging_station_info.xml" value="0.2740740740740741" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmAppBackup/GMev/app/src/main/res/layout/activity_forget_password.xml" value="0.2793819655521783" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmAppBackup/GMev/app/src/main/res/layout/activity_main.xml" value="0.2740740740740741" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmAppBackup/GMev/app/src/main/res/layout/activity_main_menu.xml" value="0.2793819655521783" />
+        <entry key="..\:/Users/Scana/Documents/GitHub/gmAppBackup/GMev/app/src/main/res/layout/activity_maps.xml" value="0.33" />
         <entry key="..\:/Users/khale/AndroidStudioProjects/GMev/app/src/main/res/layout/activity_account_balance.xml" value="0.1" />
         <entry key="..\:/Users/khale/AndroidStudioProjects/GMev/app/src/main/res/layout/activity_bank_info.xml" value="0.1" />
         <entry key="..\:/Users/khale/AndroidStudioProjects/GMev/app/src/main/res/layout/activity_main.xml" value="0.1" />

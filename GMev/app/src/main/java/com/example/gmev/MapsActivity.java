@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -37,8 +38,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.TileOverlay;
 import com.google.android.gms.maps.model.TileOverlayOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.button.MaterialButtonToggleGroup;
+import com.google.maps.android.collections.MarkerManager;
 import com.google.maps.android.heatmaps.HeatmapTileProvider;
 import com.google.maps.android.heatmaps.WeightedLatLng;
+import com.google.maps.android.quadtree.PointQuadTree;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -62,11 +67,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     static Double Longitude;
     static Double Latitude;
     int count;
+    ArrayList<Marker> placedMarkers = new ArrayList<Marker>();
+    TileOverlay overlay;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         Longitude = 0.0;
         Latitude = 0.0;
         count = 1;
@@ -119,6 +127,34 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        MaterialButton pinBtn = (MaterialButton) findViewById(R.id.markerToggle);
+        MaterialButton heatBtn = (MaterialButton) findViewById(R.id.heatMapToggle);
+
+        pinBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                for(Marker m : placedMarkers) {
+                    if (m.isVisible() == true) {
+                        m.setVisible(false);
+                    } else {
+                        m.setVisible(true);
+                    }
+                }
+            }
+        });
+
+        heatBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(overlay.isVisible() == true) {
+                    overlay.setVisible(false);
+                } else {
+                    overlay.setVisible(true);
+                }
+
+            }
+        });
     }
 
     @SuppressLint("MissingPermission")
@@ -230,6 +266,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .position(new LatLng(latitude, longitude))
                 .title(Integer.toString(count)));
         temp.setTag(count);
+        placedMarkers.add(temp);
         count++;
         mMap.setOnMarkerClickListener(this);
     }
@@ -262,7 +299,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .build();
         provider.setRadius(50);
         // Add a tile overlay to the map, using the heat map tile provider.
-        TileOverlay overlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(provider));
+        overlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(provider));
     }
 
 
