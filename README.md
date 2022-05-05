@@ -8,6 +8,9 @@ https://drive.google.com/drive/folders/1_WDTTQCAMj5d5ObdjNsmKQNY-eznc-nL?usp=sha
 Link to the Demo:
 https://photos.app.goo.gl/qU78XkTtDvBeesGPA
 
+Link to backend functions:
+https://github.com/capstoneGM/appBackend
+
 
 
 # gmApp
