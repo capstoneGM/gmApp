@@ -11,6 +11,9 @@ https://photos.app.goo.gl/qU78XkTtDvBeesGPA
 Link to backend functions:
 https://github.com/capstoneGM/appBackend
 
+Team's website:
+https://capstone-csce.uark.edu/fall-spring-21-22/teams-1-7-sp22/team-1-vehicle-to-grid-energy-buy-back/
+
 
 
 # gmApp
